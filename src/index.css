@@ -1,0 +1,487 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  background: linear-gradient(
+    92.23deg,
+    #99a98f 21.43%,
+    #c1d0b5 50.63%,
+    #d6e8d8 100%,
+    #fff8de 117.04%
+    /* 92.23deg,
+    #ff56f6 21.43%,
+    #b936ee 50.63%,
+    #3bace2 100%,
+    #406aff 117.04% */
+  );
+  box-shadow: 0px 4.42184px 107.23px rgba(221, 255, 187, 1);
+}
+
+.btn:hover {
+  background: linear-gradient(
+    92.23deg,
+    #03001c 21.43%,
+    #301e67 50.63%,
+    #5b8fb9 100%,
+    #b6eada 117.04%
+    /* #406aff 21.43%,
+    #3bace2 50.63%,
+    #b936ee 100%,
+    #ff56f6 117.04% */
+  );
+}
+
+.gradient,
+.active {
+  background: linear-gradient(
+    9292.23deg,
+    #f6ffde 21.43%,
+    #e3f2c1 50.63%,
+    #c9dbb2 100%,
+    #aac8a7 117.04%
+    /* 92.23deg,
+    #406aff 21.43%,
+    #3bace2 50.63%,
+    #b936ee 100%,
+    #ff56f6 117.04% */
+  );
+}
+
+.active {
+  color: #fff;
+  padding: 1rem;
+  border-radius: 100%;
+}
+
+.dim {
+  opacity: 0.5; /* Adjust the desired dimming effect */
+  transition: opacity 0.3s ease;
+}
+
+.brighten {
+  filter: brightness(150%); /* Adjust the desired brightness effect */
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.pop {
+  transform: scale(1.25); /* Adjust the desired scale value for the pop-up effect */
+}
+
+.services-container {
+  overflow: hidden;
+}
+
+.scroll-active {
+  overflow: auto;
+}
+
+.description-scroll {
+  max-height: 150px; /* Adjust the height as needed */
+  text-align: left;
+  overflow-y: scroll;
+} 
+
+
+/* Optional: To style the scroll bar */
+.description-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.description-scroll::-webkit-scrollbar-track {
+  background: #aac8a7;
+}
+
+.description-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.description-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Add your desired styling in the CSS file or use Styled Components */
+.skill-bar-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.skill-categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 200px;
+}
+
+.skill-category {
+  width: 250px;
+}
+
+.skill-category h3 {
+  margin-bottom: 10px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-name {
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #c1d0b5;
+  border-radius: 5px;
+  transition: width 1s; /* Animation duration */
+}
+
+.proficiency {
+  font-size: 14px;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.skill-bar {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.skill-icon.hovered {
+  transform: scale(1.1);
+}
+
+.skill-icon.hovered .overlay {
+  height: 25px;
+}
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 calc(20% - 20px);
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.skill-icon img {
+  width: 50%; /* Set the image size to one-third (1/3) of its original size */
+  /* max-width: 100%; */
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  background-color: #aac8a7;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0.9;
+  padding: 5px;
+  width: 100%;
+  transition: height 0.2s;
+}
+
+.skill-icon.hovered {
+  transform: scale(1.1);
+}
+
+.skill-icon.hovered .overlay {
+  height: 25px;
+}
+
+/* Add these styles to your CSS file */
+
+/* Styles for the popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Styles for the popup content */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+/* Close button */
+.popup-content button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* WorkExperiencePage.css */
+.work-experience-page {
+  text-align: center;
+  padding: 50px; /* Adjust as needed */
+}
+
+.section-heading {
+  color: #ddffbb;
+  margin-bottom: 20px;
+}
+
+.work-experience-container {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  gap: 20px; /* Adjust as needed */
+}
+
+.work-experience-box {
+  flex: 0 0 calc(100% - 40px); /* Adjust the width and margin as needed */
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 110px;
+  /* border: 1px solid #ccc; */
+  opacity: 0.5; /* Initial opacity for inactive boxes */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.work-experience-box.active {
+  opacity: 1; /* Full opacity for active (hovered) box */
+  background-color: #f7f7f7; /* Lighter background color for active box */
+  border: 1px solid #ccc; /* Add border to active box */
+  color: #03001c;
+}
+
+
+.work-experience-header {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.work-experience-description {
+  margin-top: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.profile-image {
+  width: 150px; /* Adjust the size as needed */
+  height: 150px; /* Adjust the size as needed */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.services-scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.service {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service.current-service {
+  transform: scale(1.2); /* Adjust the scale factor as needed */
+  /* Additional styling for the current service */
+}
+
+.service-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Optional: Style the navigation buttons */
+.service-navigation button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.service-navigation button:hover {
+  background-color: #555;
+}
+
+
+/* CSS for the popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust the gap as needed */
+  align-items: center;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px; /* Add space between top and bottom sections */
+}
+
+.text-and-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px; /* Adjust the gap as needed */
+  max-width: 900px;
+}
+
+.smaller-paragraph {
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+.popup-content img {
+  max-height: 100%; /* Take up available height */
+  max-width: 100%; /* Take up available width */
+}
+
+/* Additional styles for images if needed */
+.popup-content img {
+  max-height: 300px; /* Limit the image height if desired */
+}
+
+
+
+/* Close button style */
+.popup-content button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #555;
+}
+
+
+
+@layer base {
+  body {
+    @apply font-secondary text-lg leading-8 text-white;
+  }
+  .h2 {
+    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+  }
+  .h3 {
+    @apply font-primary font-semibold text-[18px] mb-6 leading-[46px];
+  }
+  .btn {
+    @apply rounded-full font-primary text-white font-medium;
+  }
+  .btn-sm {
+    @apply h-[48px] px-6 text-sm;
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base;
+  }
+  .btn-link {
+    @apply text-base;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#99A98F] to-[#FFF8DE] font-bold font-primary hover:from-[#FFF8DE] hover:to-[#99A98F];
+  }
+  .section {
+    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+  }
+}
